@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load bootstrap4 %}
+
+
+{% block style %}
+  #jumbotron {
+    background-color:azure;
+  }
+{% endblock %}
+
+{% block body %}
+
+  <div class="jumbotron jumbotron-fluid m-5 border border-primary rounded" id="jumbotron">
+    <div class="container">
+      
+      <h4 class="display-4">Create New Todo</h3>
+
+      <form action="" method="POST" class="m-5">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input type="submit" class="btn btn-primary" value="Submit">
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
