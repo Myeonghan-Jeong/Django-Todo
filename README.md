@@ -1,18 +1,17 @@
-# Todo app with login
+# README
 
-### Setting template directory
+## Setting template directory
 
 ```python
 TEMPLATES = [
     {
         'DIRS': [os.path.join(BASE_DIR, 'wunderlist', 'templates')],
-
         'APP_DIRS': True,
     },
 ]
 ```
 
-### HTML session
+## HTML session
 
 ```python
 @login_required
@@ -29,3 +28,4 @@ def index(request):
 
     return render(request, 'todos/index.html', context)
 ```
+
