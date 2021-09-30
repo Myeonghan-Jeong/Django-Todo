@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% load bootstrap4 %}
 
 {% block style %}
@@ -9,25 +8,18 @@
 {% endblock %}
 
 {% block body %}
-
   <div class="jumbotron jumbotron-fluid m-5 border border-success rounded" id="jumbotron">
-
     <div class="container">
-      
       {% if request.resolver_match.url_name == 'signup' %}
-        <h4 class="display-4">Create New Account</h3>
+        <h4 class="display-4 m-4">Sign up</h3>
       {% else %}
-        <h4 class="display-4">Login</h3>
+        <h4 class="display-4 m-4">Login</h3>
       {% endif %}
-
       <form action="" method="POST" class="m-5">
         {% csrf_token %}
         {% bootstrap_form form %}
         <input type="submit" class="btn btn-primary" value="Submit">
       </form>
-
     </div>
-
   </div>
-
 {% endblock %}
