@@ -23,5 +23,5 @@ def index(request):
         'visit_num': visit_num
     }
 
-    return render(request, 'todos/index.html', context)
+    return render(request, 'todo/index.html', context)
 ```

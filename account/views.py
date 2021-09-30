@@ -6,14 +6,14 @@ from django.shortcuts import render, redirect
 
 def signup(request):
     if request.user.is_authenticated:
-        return redirect('todos:index')
+        return redirect('todo:index')
 
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
             auth_login(request, user)
-            return redirect(request.GET.get('next') or 'todos:index')
+            return redirect(request.GET.get('next') or 'todo:index')
     else:
         form = UserCreationForm()
 
@@ -26,13 +26,13 @@ def signup(request):
 
 def login(request):
     if request.user.is_authenticated:
-        return redirect('todos:index')
+        return redirect('todo:index')
 
     if request.method == 'POST':
         form = AuthenticationForm(request, request.POST)
         if form.is_valid():
             auth_login(request, form.get_user())
-            return redirect('todos:index')
+            return redirect('todo:index')
     else:
         form = AuthenticationForm()
 
@@ -45,4 +45,4 @@ def login(request):
 
 def logout(request):
     auth_logout(request)
-    return redirect('todos:index')
+    return redirect('todo:index')

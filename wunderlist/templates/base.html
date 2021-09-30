@@ -25,7 +25,7 @@
         </li>
       </ul>
       {% endif %}
-      <a class="navbar-brand" href="{% url 'todos:index' %}">Todo</a>
+      <a class="navbar-brand" href="{% url 'todo:index' %}">Todo</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -44,7 +44,7 @@
             <a class="nav-link" href="{% url 'account:logout' %}">Logout</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'todos:create' %}">New Todo</a>
+            <a class="nav-link" href="{% url 'todo:create' %}">New Todo</a>
           </li>
           {% else %}
           <li class="nav-item">
