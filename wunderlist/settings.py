@@ -31,8 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'account',
     'todos',
-    'accounts',
     'bootstrap4',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -58,10 +58,10 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
 
-        # if you want root html(like base.html), add this DIRS
+        # set html root
         'DIRS': [os.path.join(BASE_DIR, 'wunderlist', 'templates')],
 
-        # django finds all templates in each apps if APP_DIRS is True
+        # find all templates in each apps
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
