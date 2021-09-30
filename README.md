@@ -1,6 +1,6 @@
 # Study: Session
 
-## Setting template directory
+## template directory
 
 ```python
 TEMPLATES = [
