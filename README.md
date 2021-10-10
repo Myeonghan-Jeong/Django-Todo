@@ -1,4 +1,4 @@
-# Study: Session
+# Study: session
 
 ## template directory
 
