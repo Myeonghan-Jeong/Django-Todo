@@ -1,6 +1,6 @@
 # Study: session
 
-## template directory
+## django html templates
 
 ```python
 TEMPLATES = [
