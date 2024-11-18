@@ -1,0 +1,32 @@
+<h1>Survey Responses</h1>
+
+<div>
+  <a href="{% url 'step1' %}">Go to Survey</a>
+</div>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Step 1 Data</th>
+      <th>Step 2 Data</th>
+      <th>Step 3 Data</th>
+      <th>Submitted At</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for response in responses %}
+    <tr>
+      <td>{{ response.name|default:"Anonymous" }}</td>
+      <td>{{ response.step1_data }}</td>
+      <td>{{ response.step2_data }}</td>
+      <td>{{ response.step3_data }}</td>
+      <td>{{ response.submitted_at }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+      <td colspan="5">No survey responses available.</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
