@@ -5,7 +5,7 @@
 ```python
 TEMPLATES = [
     {
-        'DIRS': [os.path.join(BASE_DIR, 'wunderlist', 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'survey_project', 'templates')],
         'APP_DIRS': True,
     },
 ]
