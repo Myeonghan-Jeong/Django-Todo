@@ -6,43 +6,43 @@ from django.shortcuts import render, redirect
 
 def signup(request):
     if request.user.is_authenticated:
-        return redirect('todo:index')
+        return redirect("todo:index")
 
-    if request.method == 'POST':
+    if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
             auth_login(request, user)
-            return redirect(request.GET.get('next') or 'todo:index')
+            return redirect(request.GET.get("next") or "todo:index")
     else:
         form = UserCreationForm()
 
     context = {
-        'form': form,
+        "form": form,
     }
 
-    return render(request, 'account/form.html', context)
+    return render(request, "account/form.html", context)
 
 
 def login(request):
     if request.user.is_authenticated:
-        return redirect('todo:index')
+        return redirect("todo:index")
 
-    if request.method == 'POST':
+    if request.method == "POST":
         form = AuthenticationForm(request, request.POST)
         if form.is_valid():
             auth_login(request, form.get_user())
-            return redirect('todo:index')
+            return redirect("todo:index")
     else:
         form = AuthenticationForm()
 
     context = {
-        'form': form,
+        "form": form,
     }
 
-    return render(request, 'account/form.html', context)
+    return render(request, "account/form.html", context)
 
 
 def logout(request):
     auth_logout(request)
-    return redirect('todo:index')
+    return redirect("todo:index")

@@ -7,11 +7,14 @@ class TodoForm(forms.ModelForm):
     due_date = forms.DateField(
         widget=forms.DateInput(
             attrs={
-                'type': 'date',
+                "type": "date",
             }
         )
     )
 
     class Meta:
         model = Todo
-        fields = ('content', 'due_date', )
+        fields = (
+            "content",
+            "due_date",
+        )
